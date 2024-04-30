@@ -18,7 +18,7 @@ const Login = () => {
       const data = await authService.login(username, password);
       console.log(data); // Consider removing console logs for production
       // Handle successful login here, such as storing the token if provided
-    igate('/home');  nav
+    navigate('/browse'); // Redirect to the home page after login
     } catch (error) {
       console.error(error); // Log the error to the console for debugging
       setError('Failed to login'); // Set a user-friendly error message
@@ -28,10 +28,10 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h1>Login</h1>
       {error && <div className="error">{error}</div>}
       <form onSubmit={handleSubmit} noValidate>
-        <div>
+        <div className="login-fileds">
           <label htmlFor="username">Username:</label>
           <input
             id="username"
